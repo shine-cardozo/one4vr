@@ -1,0 +1,24 @@
+{% extends 'temp1.html' %}
+
+{% block t1 %}
+<title>The Luckiest</title>
+{% endblock %}
+
+{% block b1 %}
+<h1>LeaderBoard</h1>
+<table>	
+	<th>
+		Name
+	</th>
+	<th>
+		Score
+	</th>
+	{% for score in scores %}	
+		<tr>
+			<td>{{score.ign}}</td>
+			<td>{{score.sc}}</td>
+		</tr>
+	{% endfor %}
+</table>
+
+{% endblock %}

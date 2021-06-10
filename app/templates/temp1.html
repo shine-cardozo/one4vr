@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="static/css/chance.css">
+		{% block t1 %}{% endblock %}
+	</head>
+
+	<body>
+		<div class="menu">
+			<div><a href="{{ url_for('main_view') }}">The Trial</a></div>
+			<div><a href="{{ url_for('score_view') }}">The Leaderboard</a></div>
+		</div>
+		{% block b1 %}{% endblock %}
+	</body>
+</html>

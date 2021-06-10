@@ -1,0 +1,27 @@
+html {
+	font-family: Verdana;
+}
+
+table{
+	min-width: 200px;
+}
+
+td:nth-child(even) {
+	text-align: right;
+}
+
+th:nth-child(odd) {
+	text-align: left;
+}
+th:nth-child(even) {
+	text-align: right;	
+}
+
+.menu div {
+	display: inline-block;
+	cursor: pointer;
+}
+
+dd {
+    margin-inline-start: 0px;
+}
