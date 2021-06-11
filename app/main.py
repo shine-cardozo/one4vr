@@ -7,6 +7,9 @@ from wtforms.validators import DataRequired, Length
 from sqlalchemy import desc
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = "people"
+app.config['WTF_CSRF_SECRET_KEY'] = "people"
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///posts.db'
 db = SQLAlchemy(app)
 
