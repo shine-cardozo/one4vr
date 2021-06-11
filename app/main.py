@@ -97,6 +97,6 @@ def score_view():
 	all_scores = ScoreBoard.query.order_by(desc(ScoreBoard.sc)).limit(10)
 	return render_template('ss.html', scores=all_scores)
 
-if __name__ == "__main__":
-		app.secret_key = 'people'
-		app.run()
+# if __name__ == "__main__":
+# 		app.secret_key = 'people'
+# 		app.run()
