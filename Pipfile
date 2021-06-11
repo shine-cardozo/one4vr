@@ -5,8 +5,11 @@ verify_ssl = true
 [packages]
 flask = "*"
 gunicorn = "*"
+sqlalchemy = "*"
+flask-sqlalchemy = "*"
 
 [dev-packages]
+wtforms = "*"
 
 [requires]
 python_version = "3.9.5"
