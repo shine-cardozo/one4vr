@@ -7,9 +7,9 @@ flask = "*"
 gunicorn = "*"
 sqlalchemy = "*"
 flask-sqlalchemy = "*"
+wtforms = "*"
 
 [dev-packages]
-wtforms = "*"
 
 [requires]
 python_version = "3.9.5"
