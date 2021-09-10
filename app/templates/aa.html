@@ -5,37 +5,44 @@
 {% endblock %}
 
 {% block b1 %}
-<h1>Hi, Welcome!!</h1>
-<h2> This game gives you a single chance, test your luck. </h2>
-<h2> You may be stuck here forever or get to leave on your first try. </h2>
-<h2> If it ends enter a gamer tag, please don't use your real name. </h2>
-<h2> The words will iterate between "fall" and "fell". </h2>
-
-
-{% from "_formhelpers.html" import render_field %}
-
-
-{% if session['set_state'] == 0 %}
-	<form action='/' method='POST'>		
-		{{form.csrf_token}}
-		{{render_field(form.n1)}}
-		<input type='submit' value='START'>
-	</form>
-{% endif %}
-
-{% if session['set_state'] == 1 %}
-	<div>
-		Clue: {{session['set_blank']}}
+<div class="container">
+	<h1 class="alert alert-primary text-center">Hi, Welcome!!</h1>
+	<div class="text-center">
+		<h2> This game gives you a single chance, test your luck. </h2>
+		<h2> You may be stuck here forever or get to leave on your first try. </h2>
+		<h2> If it ends enter a gamer tag, please don't use your real name. </h2>
+		<h2> The words will iterate between "<span>fall</span>" and "<span>fell</span>". </h2>
 	</div>
-	<form action='/' method='POST'>
-		{{gform.csrf_token}}
-		{{render_field(gform.g1)}}
-		<input type='submit' value='ENTER'>
-	</form>
-{% endif %}
 
-{% if session['set_state'] == 3 %}
-	<h2> You are free from the horrors of infinity. Check the scoreboard for how well you fared </h2>
-{% endif %}
+	<hr>
+
+	<div class="text-center">
+		{% from "_formhelpers.html" import render_field %}
+
+
+		{% if session['set_state'] == 0 %}
+		<form action='/' method='POST'>
+			{{form.csrf_token}}
+			{{render_field(form.n1)}}
+			<input class="btn btn-success" type='submit' value='START'>
+		</form>
+		{% endif %}
+
+		{% if session['set_state'] == 1 %}
+		<div>
+			Clue: {{session['set_blank']}}
+		</div>
+		<form action='/' method='POST'>
+			{{gform.csrf_token}}
+			{{render_field(gform.g1)}}
+			<input type='submit' value='ENTER'>
+		</form>
+		{% endif %}
+
+		{% if session['set_state'] == 3 %}
+		<h2> You are free from the horrors of infinity. Check the scoreboard for how well you fared </h2>
+		{% endif %}
+	</div>
+</div>
 
 {% endblock %}

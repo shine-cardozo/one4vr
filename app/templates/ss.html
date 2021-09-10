@@ -5,20 +5,22 @@
 {% endblock %}
 
 {% block b1 %}
-<h1>LeaderBoard</h1>
-<table>	
-	<th>
-		Name
-	</th>
-	<th>
-		Score
-	</th>
-	{% for score in scores %}	
-		<tr>
-			<td>{{score.ign}}</td>
-			<td>{{score.sc}}</td>
-		</tr>
-	{% endfor %}
-</table>
+<div class="container col col-md-6">
+	<h1 class="text-center">LeaderBoard</h1>
+	<table class="table">	
+		<th scope="col">
+			Name
+		</th>
+		<th scope="col">
+			Score
+		</th>
+		{% for score in scores %}	
+			<tr>
+				<td scope="row">{{score.ign}}</td>
+				<td>{{score.sc}}</td>
+			</tr>
+		{% endfor %}
+	</table>
+</div>
 
 {% endblock %}
