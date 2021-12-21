@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, redirect, session
 from flask_sqlalchemy import SQLAlchemy
 import random
 from wtforms import Form, StringField
-from wtforms.fields import TextField
 from wtforms.validators import DataRequired, Length
 from sqlalchemy import desc
 
@@ -22,10 +21,10 @@ class ScoreBoard(db.Model):
 		return 'ScoreBoard' + str(self.id)
 
 class NameForm(Form):
-	n1 = TextField('Enter your Gamer Tag:', [DataRequired(message="Enter Your Name Please"), Length(min=3, max=5)])
+	n1 = StringField('Enter your Gamer Tag:', [DataRequired(message="Enter Your Name Please"), Length(min=3, max=5)])
 
 class GuessForm(Form):
-	g1 = TextField('Guess:', [DataRequired(message="Enter Your Guess Please"), Length(min=4, max=4)])
+	g1 = StringField('Guess:', [DataRequired(message="Enter Your Guess Please"), Length(min=4, max=4)])
 
 
 def set_vars():
